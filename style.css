@@ -3,40 +3,102 @@
     margin: 0;
     background-color:rgb(156, 169, 169);
     font-family: 'Ubuntu', sans-serif;
+    font-size: 1em;
 }
 
 .wrapper{
-    width: 100vh;
-    margin: 0 auto;
+    width: 70%;
+    margin: 0 auto;  
+}
+
+@media (min-width: 820px){
+    .wrapper,
+    .label {
+        font-size: 1.5em;
+    }  
+}
+
+@media screen and (min-width: 1920px){
+    .wrapper,
+    .label {
+        font-size: 2em;
+    }
 }
 
 h1{
-    margin: 5vh 5vw;
+    margin: 5vh 0; 
 }
 
-hr{
-    width: 70%
-}
 .mem_list{
     list-style: none;
+     font-size: 0.9rem;
+}
+.mem_list > li{
+    border-top: medium solid rgb(255, 255, 255);
 }
 
 .input{
     display: none;
 }
 
-.div{
+.label{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    color: rgb(11, 71, 108);
+    transition: 0.5s;
+}
+
+.mem_img{
     height: 0;
+    width: 90%;
     overflow: hidden;
     transition: 0.5s;
 }
 
-.input:checked + .label + .div{
-    height: auto;
-    margin: 10px;
+.mem_svg_x {
+    width: 0.6em;
+    fill:rgb(11, 71, 108);
+    transform: rotate(45deg);
+    transition: 0.5s;
 }
 
-.input:hover + .label + .div{
+@media (min-width: 820px){
+    .mem_svg_x
+     {
+        font-size: 1em;
+    }  
+}
+
+@media screen and (min-width: 1920px){
+    .mem_svg_x {
+        font-size: 1.3em;
+    }
+}
+.input:checked + .label{
+    fill:rgb(32, 123, 123);
+    
+}
+.input:checked + .label + .mem_img{
     height: auto;
-    margin: 10px;
+    margin: 10px auto;
+}
+.input:checked + .label .mem_svg_x{
+    fill:rgb(32, 123, 123);
+    transform: rotate(90deg);
+}
+
+@media screen and (min-width: 1920px) {
+    .input:hover + .label{
+        color:rgb(32, 123, 123);
+        cursor: pointer;
+    }
+    .input:hover + .label + .mem_img{
+        height: auto;
+        transition: 0.5s
+    }
+    .input:hover + .label .mem_svg_x{
+        fill:rgb(32, 123, 123);
+        transform: rotate(90deg);
+    }
 }
