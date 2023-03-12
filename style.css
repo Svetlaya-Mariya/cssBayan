@@ -48,7 +48,7 @@ h1{
     display: none;
 }
 
-.label{
+.label span{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -87,7 +87,7 @@ h1{
     color:rgb(32, 123, 123);
     
 }
-.input:checked + .label + .mem_img{
+.input:checked + .label .mem_img{
     height: auto;
     margin: 10px auto;
 }
@@ -100,14 +100,17 @@ h1{
     li:hover{
         cursor: pointer;
     }
-    li:hover > .label{
+    li:hover > .label > span{
         color:rgb(32, 123, 123);
+        cursor: pointer;
     }
-    li:hover > .input+ .label + .mem_img{
+    li:hover > .input+ .label > .mem_img{
         height: 100%;
         margin: 10px auto;
-        transition: 0.5s
+        transition: 0.5s;
+        cursor: pointer;
     }
+
     li:hover > .input + .label .mem_svg_x{
         fill:rgb(32, 123, 123);
         transform: rotate(90deg);
