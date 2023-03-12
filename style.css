@@ -1,7 +1,6 @@
 *{
     padding: 0;
     margin: 0;
-    background-color:rgb(156, 169, 169);
     font-family: 'Ubuntu', sans-serif;
     font-size: 1em;
 }
@@ -9,7 +8,10 @@
 .wrapper{
     width: 70%;
     margin: 0 auto;  
+    padding: 0.5em;
+    background-color:rgb(203, 213, 213);
 }
+
 .wrapper:hover .mem_svg_x{
     opacity: 1;
     transition: 0.5s;
@@ -34,7 +36,8 @@ h1{
 
 .mem_list{
     list-style: none;
-     font-size: 0.9rem;
+    font-size: 0.9rem;
+    padding: 0.5em;
 }
 .mem_list > li{
     border-top: medium solid rgb(255, 255, 255);
@@ -94,16 +97,18 @@ h1{
 }
 
 @media screen and (min-width: 1920px) {
-    .input:hover + .label{
-        color:rgb(32, 123, 123);
+    li:hover{
         cursor: pointer;
     }
-    .input:hover + .label + .mem_img{
+    li:hover > .label{
+        color:rgb(32, 123, 123);
+    }
+    li:hover > .input+ .label + .mem_img{
         height: 100%;
         margin: 10px auto;
         transition: 0.5s
     }
-    .input:hover + .label .mem_svg_x{
+    li:hover > .input + .label .mem_svg_x{
         fill:rgb(32, 123, 123);
         transform: rotate(90deg);
     }
