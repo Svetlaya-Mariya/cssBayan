@@ -10,7 +10,10 @@
     width: 70%;
     margin: 0 auto;  
 }
-
+.wrapper:hover .mem_svg_x{
+    opacity: 1;
+    transition: 0.5s;
+}
 @media (min-width: 820px){
     .wrapper,
     .label {
@@ -35,6 +38,7 @@ h1{
 }
 .mem_list > li{
     border-top: medium solid rgb(255, 255, 255);
+    padding-top: 0.9em;
 }
 
 .input{
@@ -43,7 +47,7 @@ h1{
 
 .label{
     display: flex;
-    align-items: start;
+    align-items: center;
     justify-content: space-between;
     color: rgb(11, 71, 108);
     transition: 0.5s;
@@ -57,6 +61,7 @@ h1{
 }
 
 .mem_svg_x {
+    opacity: 1;
     width: 0.6em;
     fill:rgb(11, 71, 108);
     transform: rotate(45deg);
@@ -76,7 +81,7 @@ h1{
     }
 }
 .input:checked + .label{
-    fill:rgb(32, 123, 123);
+    color:rgb(32, 123, 123);
     
 }
 .input:checked + .label + .mem_img{
@@ -94,7 +99,8 @@ h1{
         cursor: pointer;
     }
     .input:hover + .label + .mem_img{
-        height: auto;
+        height: 100%;
+        margin: 10px auto;
         transition: 0.5s
     }
     .input:hover + .label .mem_svg_x{
